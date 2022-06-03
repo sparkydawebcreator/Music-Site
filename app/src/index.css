@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Poppins:wght@100&family=Quicksand:wght@300;500;600&family=Raleway:ital,wght@1,200;1,300&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background: #fff;
+}
+
+#welcome {
+  margin-top: 5%;
+  text-align:center;
+  color: black;
+  font-family: 'Kdam Thmor Pro'
+
+}
+
+#code {
+  color: blue;
+  font-family: 'Courier New', Courier, monospace
+}
