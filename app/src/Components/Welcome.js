@@ -2,7 +2,8 @@
 const Welcome = (props) => {
     return (
         <div>
-            <h1 id="welcome">Learn to Code Today!</h1>
+            <h1 id="welcome">Welcome to Music World!</h1>
+
         </div>
     )
 }
