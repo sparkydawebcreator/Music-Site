@@ -8,18 +8,56 @@
 }
 
 body {
-  background: #fff;
+  background: #292929;
 }
 
 #welcome {
   margin-top: 5%;
   text-align:center;
-  color: black;
+  color: white;
   font-family: 'Kdam Thmor Pro'
 
 }
+#snippets {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 20px;
+  transform: .2s;
+  transition: .2s;
+}
+
+#you-can {
+  font-family: 'Poppins';
+  font-size: 30px;
+  color: white;
+  text-transform: uppercase;
+}
+
 
 #code {
+  font-size: 30px;
   color: blue;
-  font-family: 'Courier New', Courier, monospace
+  font-family: 'Courier New', Courier, monospace;
+  animation: 0.2s;
 }
+
+#code:hover span {
+  display: none
+}
+
+#code:hover:before {
+  content: "['CHANGE', 'THE', 'WORLD']"
+}
+
+#link-container {
+  padding: 20px;
+  color: blue;
+  display: flex;
+  justify-content: space-around;
+}
+#link-container a {
+  text-decoration: none;
+  margin-left: 20px;
+}
+
