@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=K2D:wght@200&family=Kdam+Thmor+Pro&family=PT+Sans:wght@700&family=Poppins:wght@100&family=Quicksand:wght@300;500;600&family=Raleway:ital,wght@1,200;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=K2D:wght@200&family=Kdam+Thmor+Pro&family=PT+Sans:wght@700&family=Poppins:wght@100&family=Quicksand:wght@300;500;600&family=Raleway:ital,wght@1,200;1,300&family=Secular+One&display=swap');
 
 * {
   margin: 0;
@@ -76,7 +77,6 @@ main {
   line-height: 125px;  
   color: white;
   text-align: center;
-
 }
 
 #start-content-subtitle {
@@ -108,3 +108,25 @@ main {
   align-items: center;
   justify-content: center;
 }
+
+#review-container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+   background-color: rgb(249,249,250); 
+  text-align: center;
+
+  height: 2000px;
+  font-family: 'Quicksand'
+}
+
+.quotes {
+  font-size: 27px;
+  font-family: 'Secular One'
+}
+.review {
+
+  font-family: 'secular one';
+  /* background-color: rgb(220, 219, 219); */
+}
+

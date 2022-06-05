@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="sign-up-html">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,10 +10,110 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Quicksand:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" src="../src/styles/signup.css" />
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=K2D:wght@200&family=Kdam+Thmor+Pro&family=PT+Sans:wght@700&family=Poppins:wght@100&family=Quicksand:wght@300;500;600&family=Raleway:ital,wght@1,200;1,300&display=swap');
+
+      * {
+          padding: 0;
+          margin: 0;
+      }
+
+      html {
+          background: linear-gradient(rgb(125,42,232), rgb(168,56,225)) fixed; /* make it fixed or else the background will look weird */
+      }
+
+      #sign-up-text, #sign-up-form {
+          font-family: 'Quicksand';
+          background-color: whitesmoke;
+          width: 657px;
+          text-align: center;
+
+        }
+        
+     
+        #sign-up {   
+        justify-content: center;
+        margin: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .form-label {
+        font-family: 'Quicksand';
+        font-size: 20px;
+        text-align: left;
+      }
+
+
+      #submit-button {
+        color: black;
+        background-color: rgb(255, 200, 0);
+        border: none;
+        border-radius: 25px;
+        padding: 23px;
+        margin-top: 20px;
+        transition: .1s;
+      }
+
+      #submit-button:hover {
+        background-color: rgb(255, 211, 54);
+      }
+
+
+
+
+      
+    </style>
+    
     <title>Sign Up</title>
   </head>
   <body>
-    <h1>Hello, World!</h1>
+
+
+    <section id="sign-up">
+      <h1 id="sign-up-text">Sign Up!</h1>
+      <h1 id="sign-up-form">
+        <form id="sign-up-form-real" action="#"> <!-- redirect to home page, action="/home.html" -->
+          <div>
+            <label class="form-label" for="usernameID">Username</label>
+            <input class="form-input"  type="text" id="usernameID">&nbsp;
+          </div>
+          <div>
+            <label class="form-label" for="emailID">Email</label>
+            <input class="form-input"  type="email" id="emailID">&nbsp;
+          </div>
+          <div>
+            <label class="form-label" for="passwordID">Password</label>
+            <input class="form-input"  type="password" id="passwordID">&nbsp;
+          </div>
+          <div>
+            <button type="submit" id="submit-button" onclick="getInfo()">Submit</button>
+          </div>
+        </form>
+      </h1>
+      
+        
+
+    </section>
+
+
+
+    <script>
+      var username=undefined;
+      var password=undefined;
+      var email=undefined;
+
+      const form = document.getElementById("sign-up-form-real")
+
+      const getInfo = () => {
+        username = form.elements[0].value
+        email = form.elements[1].value
+        password = form.elements[3].value
+
+        console.log(username, email, password)
+      }
+    </script>
   </body>
 </html>
