@@ -14,21 +14,36 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=K2D:wght@200&family=Kdam+Thmor+Pro&family=PT+Sans:wght@700&family=Poppins:wght@100&family=Quicksand:wght@300;500;600&family=Raleway:ital,wght@1,200;1,300&display=swap');
 
+      :root{--background-color: linear-gradient(rgb(125,42,232), rgb(168,56,225)) fixed;} /* make a bg var cuz im lazy */
       * {
           padding: 0;
           margin: 0;
       }
 
-      html {
-          background: linear-gradient(rgb(125,42,232), rgb(168,56,225)) fixed; /* make it fixed or else the background will look weird */
+      button {
+        cursor: pointer;
       }
 
-      #sign-up-text, #sign-up-form {
+      html {
+          background: var(--background-color); /* make it fixed or else the background will look weird */
+      }
+
+      a {
+        text-decoration: none;
+        color: rgb(125,42,232);
+        opacity: .9;
+      }
+
+      .sign-up-text, #sign-up-form {
           font-family: 'Quicksand';
           background-color: whitesmoke;
           width: 657px;
           text-align: center;
+        }
 
+        .sign-up-text {
+          font-size: 37px;
+          padding-top: 20px;
         }
         
      
@@ -43,7 +58,6 @@
       .form-label {
         font-family: 'Quicksand';
         font-size: 20px;
-        text-align: left;
       }
 
 
@@ -61,6 +75,30 @@
         background-color: rgb(255, 211, 54);
       }
 
+      .form-input {
+        padding: 4px;
+        padding-right: 13px;
+        border-radius: 7px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      #pricing {
+        font-size: 20px;
+        font-family: 'Poppins';
+        background-color: whitesmoke;
+          width: 657px;
+          text-align: center;
+        
+      }
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        background-color: #e5e5e5;
+        padding: 80px;
+        margin: 10px;
+        transition: .2s;
+      }
 
 
 
@@ -73,27 +111,82 @@
 
 
     <section id="sign-up">
-      <h1 id="sign-up-text">Sign Up!</h1>
+      <h1 class="sign-up-text">Sign Up!</h1>
       <h1 id="sign-up-form">
         <form id="sign-up-form-real" action="#"> <!-- redirect to home page, action="/home.html" -->
           <div>
-            <label class="form-label" for="usernameID">Username</label>
-            <input class="form-input"  type="text" id="usernameID">&nbsp;
+            <label class="form-label" for="usernameID">Username</label><br/>
+            <input class="form-input"  type="text" id="usernameID" placeholder="Awesome username" required>&nbsp;
           </div>
           <div>
-            <label class="form-label" for="emailID">Email</label>
-            <input class="form-input"  type="email" id="emailID">&nbsp;
+            <label class="form-label" for="emailID">Email</label><br/>
+            <input class="form-input"  type="email" id="emailID" placeholder="you@email.com" required>&nbsp;
           </div>
           <div>
-            <label class="form-label" for="passwordID">Password</label>
-            <input class="form-input"  type="password" id="passwordID">&nbsp;
+            <label class="form-label" for="passwordID">Password</label><br/>
+            <input class="form-input"  type="password" id="passwordID" placeholder="p@$$w0rd" required>&nbsp;
           </div>
-          <div>
-            <button type="submit" id="submit-button" onclick="getInfo()">Submit</button>
+        <!-- "Payment", DO NOT PUT YOUR REAL PAYMENT IN HERE  --> 
+      <div>
+        <h1 class="sign-up-text">Payment & Plans</h1>
+        <button type="button">
+          <div class="card" id="basic">
+            <h3>Basic</h3>
+            <h4>Includes:</h4>
+            <ul>
+              <li>
+                <h5>Every single song, free</h5>
+              </li>
+              <li>
+                <h5>Radios</h5>
+              </li>
+              <li>
+                <h5>Podcasts</h5>
+              </li>
+            </ul>
           </div>
-        </form>
-      </h1>
-      
+        </button>
+        <button type="button">
+          <div class="card" id="pro">
+            <h3>Pro</h3>
+            <h4>Includes:</h4>
+            <ul>
+              <li>
+                <h5>Basic++</h5>
+              </li>
+              <li>
+                <h5>Ad Free Listening</h5>
+              </li>
+              <li>
+                <h5>8D Audio</h5>
+              </li>
+            </ul>
+          </div> 
+        </button>
+        <button type="button">
+          <div class="card" id="premium">
+            <h3>Premium</h3>
+            <h4>Includes:</h4>
+            <ul>
+              <li>Pro++</li>
+              <li>
+                <h5>Ad Free Listening</h5>
+              </li>
+              <li>
+                <h5>Listen Offline</h5>
+              </li>
+              <li>8D Audio Features</li>
+            </ul>
+          </div>
+        </button>
+        <h3 id="pricing">*For More Information, go check out the <a href="/pricing.html">Pricing</a> Page*</h3>
+        
+      </div>
+      <div>
+        <button type="submit" id="submit-button" onclick="getInfo()">Submit</button>
+      </div>
+    </h1>
+    </form>
         
 
     </section>

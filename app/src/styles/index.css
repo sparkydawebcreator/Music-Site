@@ -25,6 +25,9 @@ main {
   height: 15vh
 }
 
+button {
+  cursor: pointer;
+}
 
 #welcome {
   margin-top: 5%;
