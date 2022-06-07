@@ -16,18 +16,25 @@
 
       :root{--background-color: linear-gradient(rgb(125,42,232), rgb(168,56,225)) fixed;} /* make a bg var cuz im lazy */
       * {
-          padding: 0;
-          margin: 0;
+        padding: 0;
+        margin: 0;
       }
-
+      
       button {
         cursor: pointer;
+        transition: .2s;
+        background-color: var(--background-color);
+        margin: 5px;
+        border: none;
       }
-
+      
+      button:hover {
+        border: 3px solid rgb(125,42,232);
+      }
       html {
-          background: var(--background-color); /* make it fixed or else the background will look weird */
+        background: var(--background-color); /* make it fixed or else the background will look weird */
       }
-
+      
       a {
         text-decoration: none;
         color: rgb(125,42,232);
@@ -35,7 +42,7 @@
       }
 
       .sign-up-text, #sign-up-form {
-          font-family: 'Quicksand';
+        font-family: 'Quicksand';
           background-color: whitesmoke;
           width: 657px;
           text-align: center;
@@ -53,6 +60,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        opacity: .87;
       }
 
       .form-label {
@@ -95,11 +103,18 @@
       .card {
         display: flex;
         flex-direction: column;
-        background-color: #e5e5e5;
+        background-color: #e5e5e5; 
         padding: 80px;
         margin: 10px;
         transition: .2s;
       }
+
+
+      #correct {
+        font-size: 30px;
+        font-family: 'Quicksand'
+      }
+
 
 
 
@@ -114,7 +129,7 @@
     <section id="sign-up">
       <h1 class="sign-up-text">Sign Up!</h1>
       <h1 id="sign-up-form">
-        <form id="sign-up-form-real" action="#"> <!-- redirect to home page, action="/home.html" -->
+        <form id="sign-up-form-real" action="/home.html"> <!-- redirect to home page, action="/home.html" -->
           <div>
             <label class="form-label" for="usernameID">Username</label><br/>
             <input class="form-input"  type="text" id="usernameID" placeholder="Awesome username" required>&nbsp;
@@ -130,7 +145,7 @@
         <!-- "Payment", DO NOT PUT YOUR REAL PAYMENT IN HERE  --> 
       <div>
         <h1 class="sign-up-text">Payment & Plans</h1>
-        <button type="button">
+        <button type="button" id="basic-button" onclick="basicOnClick()">
           <div class="card" id="basic">
             <h3>Basic</h3>
             <h4>Includes:</h4>
@@ -147,7 +162,7 @@
             </ul>
           </div>
         </button>
-        <button type="button">
+        <button type="button" id="pro-button" onclick="proOnClick()">
           <div class="card" id="pro">
             <h3>Pro</h3>
             <h4>Includes:</h4>
@@ -164,7 +179,7 @@
             </ul>
           </div> 
         </button>
-        <button type="button">
+        <button type="button" id="premium-button" onclick="premiumOnClick()">
           <div class="card" id="premium">
             <h3>Premium</h3>
             <h4>Includes:</h4>
@@ -186,6 +201,9 @@
       <div>
         <button type="submit" id="submit-button" onclick="getInfo()">Submit</button>
       </div>
+      <div>
+        <h4 id="correct">Please Submit the form to get this response.</h4>
+      </div>
     </h1>
     </form>
         
@@ -198,16 +216,51 @@
       var username=undefined;
       var password=undefined;
       var email=undefined;
+      var plan=undefined;
+      var buttonPressed=false
 
       const form = document.getElementById("sign-up-form-real")
 
-      const getInfo = () => {
-        username = form.elements[0].value
-        email = form.elements[1].value
-        password = form.elements[3].value
+      const premiumButton = document.getElementById("premium-button")
+      const proButton = document.getElementById("pro-button")
+      const basicButton = document.getElementById("basic-button")
 
-        console.log(username, email, password)
+      const getInfo = () => {
+        if (buttonPressed) {
+            username = form.elements[0].value
+            email = form.elements[1].value
+            password = form.elements[2].value
+            console.log(username, email, password)
+            document.getElementById("correct").innerHTML = "Plan Submitted correctly"
+        } else {
+          document.getElementById("correct").innerHTML = "Please choose a plan."
+        }
       }
+
+      const basicOnClick = () => {
+        basicButton.style.border = "3px solid rgb(125,42,232)"
+        proButton.style.border = "none"
+        premiumButton.style.border = "none"
+        console.log("basic onclick")
+        buttonPressed=true
+      }
+
+      const premiumOnClick = () => {
+        premiumButton.style.border = "3px solid rgb(125,42,232)"
+        basicButton.style.border = "none"
+        proButton.style.border = "none"
+        console.log("premium onclick")
+        buttonPressed=true
+      }
+
+      const proOnClick = () => {
+        proButton.style.border = "3px solid rgb(125,42,232)"
+        premiumButton.style.border = "none"
+        basicButton.style.border = "none"
+        console.log("pro onclick")
+        buttonPressed=true
+      }
+
     </script>
   </body>
 </html>
