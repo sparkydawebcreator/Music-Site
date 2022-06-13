@@ -1,10 +1,16 @@
 # School-Project
 # sus
-# amongus
-# school-project
-# sparkydawebcreator
-# why am i hashing
-# done :)
+# sus
+# sus
+# sus
+# sus
+# sus
+# sus
+# sus
+# sus
+# sus
+# sus
+# sus
 my school proj for 6th grade coding
 this is incomplete because:
   1. music doesn't work (lol)
