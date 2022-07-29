@@ -1,5 +1,4 @@
 # School-Project
-## DO NOT USE FOR COMMERCIAL USE
 my school proj for 6th grade coding
 this is incomplete because:
   1. music doesn't work (lol)
